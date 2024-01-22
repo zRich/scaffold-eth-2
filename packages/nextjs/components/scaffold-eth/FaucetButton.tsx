@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { t } from "i18next";
 import { createWalletClient, http, parseEther } from "viem";
 import { hardhat } from "viem/chains";
 import { useAccount, useNetwork } from "wagmi";
@@ -55,7 +56,7 @@ export const FaucetButton = () => {
           ? "ml-1"
           : "ml-1 tooltip tooltip-bottom tooltip-secondary tooltip-open font-bold before:left-auto before:transform-none before:content-[attr(data-tip)] before:right-0"
       }
-      data-tip="Grab funds from faucet"
+      data-tip={t("scaffold.Grab funds from faucet")}
     >
       <button className="btn btn-secondary btn-sm px-2 rounded-full" onClick={sendETH} disabled={loading}>
         {!loading ? (

@@ -14,12 +14,6 @@ const Home: NextPage = () => {
             <span className="block text-2xl mb-2">{t("pages.home.Welcome to")}</span>
             <span className="block text-4xl font-bold">{t("pages.home.Scaffold-ETH 2")}</span>
           </h1>
-          {/* <p className="text-center text-lg">
-            {t("pages.home.Get started by editing")}{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              packages/nextjs/pages/index.tsx
-            </code>
-          </p> */}
           <p className="text-center text-lg">
             {t("pages.home.Edit your smart contract")}{" "}
             <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">

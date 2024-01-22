@@ -1,4 +1,5 @@
 import { WriteContractResult, getPublicClient } from "@wagmi/core";
+import { t } from "i18next";
 import { Hash, SendTransactionParameters, TransactionReceipt, WalletClient } from "viem";
 import { useWalletClient } from "wagmi";
 import { getParsedError } from "~~/components/scaffold-eth";
@@ -83,7 +84,10 @@ export const useTransactor = (_walletClient?: WalletClient): TransactionFunc => 
       notification.remove(notificationId);
 
       notification.success(
-        <TxnNotification message="Transaction completed successfully!" blockExplorerLink={blockExplorerTxURL} />,
+        <TxnNotification
+          message={t("notifications.Transaction completed successfully!")}
+          blockExplorerLink={blockExplorerTxURL}
+        />,
         {
           icon: "🎉",
         },

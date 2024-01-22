@@ -1,3 +1,4 @@
+import { t } from "i18next";
 import { formatEther } from "viem";
 import { TransactionHash } from "~~/components/blockexplorer/TransactionHash";
 import { Address } from "~~/components/scaffold-eth";
@@ -14,13 +15,15 @@ export const TransactionsTable = ({ blocks, transactionReceipts }: TransactionsT
         <table className="table text-xl bg-base-100 table-zebra w-full md:table-md table-sm">
           <thead>
             <tr className="rounded-xl text-sm text-base-content">
-              <th className="bg-primary">Transaction Hash</th>
-              <th className="bg-primary">Function Called</th>
-              <th className="bg-primary">Block Number</th>
-              <th className="bg-primary">Time Mined</th>
-              <th className="bg-primary">From</th>
-              <th className="bg-primary">To</th>
-              <th className="bg-primary text-end">Value ({targetNetwork.nativeCurrency.symbol})</th>
+              <th className="bg-primary">{t("pages.transaction.Transaction Hash")}</th>
+              <th className="bg-primary">{t("pages.transaction.Function Called")}</th>
+              <th className="bg-primary">{t("pages.transaction.Block Number")}</th>
+              <th className="bg-primary">{t("pages.transaction.Time Mined")}</th>
+              <th className="bg-primary">{t("pages.transaction.From")}</th>
+              <th className="bg-primary">{t("pages.transaction.To")}</th>
+              <th className="bg-primary text-end">
+                {t("pages.transaction.Value")}({targetNetwork.nativeCurrency.symbol})
+              </th>
             </tr>
           </thead>
           <tbody>

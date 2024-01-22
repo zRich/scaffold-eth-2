@@ -2,6 +2,7 @@ import { useReducer } from "react";
 import { ContractReadMethods } from "./ContractReadMethods";
 import { ContractVariables } from "./ContractVariables";
 import { ContractWriteMethods } from "./ContractWriteMethods";
+import { t } from "i18next";
 import { Spinner } from "~~/components/assets/Spinner";
 import { Address, Balance } from "~~/components/scaffold-eth";
 import { useDeployedContractInfo, useNetworkColor } from "~~/hooks/scaffold-eth";
@@ -48,14 +49,14 @@ export const ContractUI = ({ contractName, className = "" }: ContractUIProps) =>
                 <span className="font-bold">{contractName}</span>
                 <Address address={deployedContractData.address} />
                 <div className="flex gap-1 items-center">
-                  <span className="font-bold text-sm">Balance:</span>
+                  <span className="font-bold text-sm">{t("scaffold.Balance")}:</span>
                   <Balance address={deployedContractData.address} className="px-0 h-1.5 min-h-[0.375rem]" />
                 </div>
               </div>
             </div>
             {targetNetwork && (
               <p className="my-0 text-sm">
-                <span className="font-bold">Network</span>:{" "}
+                <span className="font-bold">{t("scaffold.Network")}</span>:{" "}
                 <span style={{ color: networkColor }}>{targetNetwork.name}</span>
               </p>
             )}
@@ -72,7 +73,7 @@ export const ContractUI = ({ contractName, className = "" }: ContractUIProps) =>
             <div className="bg-base-100 rounded-3xl shadow-md shadow-secondary border border-base-300 flex flex-col mt-10 relative">
               <div className="h-[5rem] w-[5.5rem] bg-base-300 absolute self-start rounded-[22px] -top-[38px] -left-[1px] -z-10 py-[0.65rem] shadow-lg shadow-base-300">
                 <div className="flex items-center justify-center space-x-2">
-                  <p className="my-0 text-sm">Read</p>
+                  <p className="my-0 text-sm">{t("scaffold.Read")}</p>
                 </div>
               </div>
               <div className="p-5 divide-y divide-base-300">
@@ -84,7 +85,7 @@ export const ContractUI = ({ contractName, className = "" }: ContractUIProps) =>
             <div className="bg-base-100 rounded-3xl shadow-md shadow-secondary border border-base-300 flex flex-col mt-10 relative">
               <div className="h-[5rem] w-[5.5rem] bg-base-300 absolute self-start rounded-[22px] -top-[38px] -left-[1px] -z-10 py-[0.65rem] shadow-lg shadow-base-300">
                 <div className="flex items-center justify-center space-x-2">
-                  <p className="my-0 text-sm">Write</p>
+                  <p className="my-0 text-sm">{t("scaffold.Write")}</p>
                 </div>
               </div>
               <div className="p-5 divide-y divide-base-300">

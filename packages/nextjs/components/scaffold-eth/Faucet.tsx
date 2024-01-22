@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { t } from "i18next";
 import { Address as AddressType, createWalletClient, http, parseEther } from "viem";
 import { hardhat } from "viem/chains";
 import { useNetwork } from "wagmi";
@@ -84,7 +85,7 @@ export const Faucet = () => {
     <div>
       <label htmlFor="faucet-modal" className="btn btn-primary btn-sm font-normal normal-case gap-1">
         <BanknotesIcon className="h-4 w-4" />
-        <span>Faucet</span>
+        <span>{t("pages.footer.Faucet")}</span>
       </label>
       <input type="checkbox" id="faucet-modal" className="modal-toggle" />
       <label htmlFor="faucet-modal" className="modal cursor-pointer">

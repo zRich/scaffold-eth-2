@@ -1,0 +1,210 @@
+{
+  "pages": {
+    "header": {
+      "Scaffold-ETH": "以太坊脚手架",
+      "Debug Contracts": "调试合约",
+      "Ethereum dev stack": "以太坊开发栈"
+    },
+    "metaheader": {
+      "Scaffold-ETH 2 App": "以太坊脚手架"
+    },
+    "footer": {
+      "Faucet": "钱包",
+      "Block Explorer": "区块链浏览器"
+    },
+    "home": {
+      "Welcome to": "欢迎使用",
+      "Scaffold-ETH 2": "以太坊脚手架",
+      "Block Explorer": "区块链浏览器",
+      "Get started by editing": "开始编辑",
+      "Edit your smart contract": "编辑智能合约",
+      "in": "在目录",
+      "Tinker with your smart contract using the": "要调试、修复智能合约，点击",
+      "Debug Contract": "'调试合约'",
+      "tab.": "标签",
+      "Explore your local transactions with the": "要浏览本地交易，点击"
+    },
+    "explorer": {
+      "Cannot connect to local provider": "无法连接到本地链"
+    },
+    "debug": {
+      "Debug Contracts": "调试合约",
+      "No contracts found!": "没有找到合约！",
+      "Check": "检查",
+      "You can debug & interact with your deployed contracts here.": "您可以在这里调试和交互部署的合约。",
+      "debug": "调试"
+    },
+    "transaction": {
+      "Back": "返回",
+      "Transaction Details": "交易详情",
+      "Transaction Hash": "交易哈希",
+      "Block Number": "区块号",
+      "From": "发起地址",
+      "To": "接收地址",
+      "Time Mined": "挖矿时间",
+      "Contract Creation": "合约创建",
+      "Function Called": "调用函数",
+      "Function called": "调用函数",
+      "Value": "金额",
+      "Gas Price": "Gas 价格",
+      "Data": "数据",
+      "Logs": "日志",
+      "topics": "主题",
+      "Loading...": "加载中..."
+    },
+    "forgotPassword": {
+      "title": "Forgot your password?",
+      "fields": {
+        "email": "Email"
+      },
+      "errors": {
+        "validEmail": "Invalid email address"
+      },
+      "buttons": {
+        "submit": "Send reset instructions"
+      }
+    },
+    "register": {
+      "title": "Sign up for your account",
+      "fields": {
+        "email": "Email",
+        "password": "Password"
+      },
+      "errors": {
+        "validEmail": "Invalid email address"
+      },
+      "buttons": {
+        "submit": "Register",
+        "haveAccount": "Have an account?"
+      }
+    },
+    "updatePassword": {
+      "title": "Update password",
+      "fields": {
+        "password": "New Password",
+        "confirmPassword": "Confirm new password"
+      },
+      "errors": {
+        "confirmPasswordNotMatch": "Passwords do not match"
+      },
+      "buttons": {
+        "submit": "Update"
+      }
+    },
+    "error": {
+      "info": "You may have forgotten to add the {{action}} component to {{resource}} resource.",
+      "404": "Sorry, the page you visited does not exist.",
+      "resource404": "Are you sure you have created the {{resource}} resource.",
+      "backHome": "Back Home"
+    }
+  },
+  "components": {
+    "searchbar": {
+      "Search by hash or address": "通过哈希或地址搜索",
+      "Search": "搜索"
+    },
+    "dropdown":{
+      "View QR Code": "查看二维码",
+      "Copy address": "复制地址",
+      "Switch Network": "切换网络",
+      "View on Block Explorer": "在区块链浏览器中查看",
+      "Disconnect": "断开连接"
+    }
+  },
+  "actions": {
+    "list": "List",
+    "create": "Create",
+    "edit": "Edit",
+    "show": "Show"
+  },
+  "scaffold": {
+    "Balance": "余额",
+    "Network": "网络",
+    "Read": "读方法",
+    "Write": "写方法",
+    "Transactions": "交易",
+    "Code": "代码",
+    "Storage": "存储",
+    "Logs": "日志",
+    "clear": "Clear",
+    "refresh": "Refresh",
+    "show": "Show",
+    "undo": "Undo",
+    "import": "Import",
+    "clone": "Clone",
+    "notAccessTitle": "You don't have permission to access"
+  },
+  "warnWhenUnsavedChanges": "Are you sure you want to leave? You have unsaved changes.",
+  "notifications": {
+    "success": "Successful",
+    "error": "Error (status code: {{statusCode}})",
+    "undoable": "You have {{seconds}} seconds to undo",
+    "createSuccess": "Successfully created {{resource}}",
+    "createError": "There was an error creating {{resource}} (status code: {{statusCode}})",
+    "deleteSuccess": "Successfully deleted {{resource}}",
+    "deleteError": "Error when deleting {{resource}} (status code: {{statusCode}})",
+    "editSuccess": "Successfully edited {{resource}}",
+    "editError": "Error when editing {{resource}} (status code: {{statusCode}})",
+    "importProgress": "Importing: {{processed}}/{{total}}",
+    "Transaction completed successfully!": "交易成功！"
+  },
+  "loading": "Loading",
+  "tags": {
+    "clone": "Clone"
+  },
+  "dashboard": {
+    "title": "Dashboard"
+  },
+  "blog_posts": {
+    "blog_posts": "Blog Posts",
+    "fields": {
+      "id": "Id",
+      "title": "Title",
+      "content": "Content",
+      "status": "Status",
+      "createdAt": "Created At",
+      "category": "Category"
+    },
+    "titles": {
+      "create": "Create Blog Post",
+      "edit": "Edit Blog Post",
+      "list": "Blog Posts",
+      "show": "Show Blog Post"
+    }
+  },
+  "categories": {
+    "categories": "Categories",
+    "fields": {
+      "id": "Id",
+      "title": "Title",
+      "createdAt": "Created At"
+    },
+    "titles": {
+      "create": "Create Category",
+      "edit": "Edit Category",
+      "list": "Categories",
+      "show": "Show Category"
+    }
+  },
+  "documentTitle": {
+    "default": "refine",
+    "suffix": " | refine",
+    "blog_posts": {
+      "list": "Blog Posts | refine",
+      "show": "#{{id}} Show Blog Post | refine",
+      "edit": "#{{id}} Edit Blog Post | refine",
+      "create": "Create new Blog Post | refine",
+      "clone": "#{{id}} Clone Blog Post | refine"
+    },
+    "categories": {
+      "list": "Categories | refine",
+      "show": "#{{id}} Show Category | refine",
+      "edit": "#{{id}} Edit Category | refine",
+      "create": "Create new Category | refine",
+      "clone": "#{{id}} Clone Category | refine"
+    }
+  },
+  "table": {
+    "actions": "Actions"
+  }
+}

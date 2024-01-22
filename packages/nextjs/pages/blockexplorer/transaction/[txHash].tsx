@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { t } from "i18next";
 import type { NextPage } from "next";
 import { Hash, Transaction, TransactionReceipt, formatEther, formatUnits } from "viem";
 import { hardhat } from "viem/chains";
@@ -41,28 +42,30 @@ const TransactionPage: NextPage = () => {
   return (
     <div className="container mx-auto mt-10 mb-20 px-10 md:px-0">
       <button className="btn btn-sm btn-primary" onClick={() => router.back()}>
-        Back
+        {t("pages.transaction.Back")}
       </button>
       {transaction ? (
         <div className="overflow-x-auto">
-          <h2 className="text-3xl font-bold mb-4 text-center text-primary-content">Transaction Details</h2>{" "}
+          <h2 className="text-3xl font-bold mb-4 text-center text-primary-content">
+            {t("pages.transaction.Transaction Details")}
+          </h2>{" "}
           <table className="table rounded-lg bg-base-100 w-full shadow-lg md:table-lg table-md">
             <tbody>
               <tr>
                 <td>
-                  <strong>Transaction Hash:</strong>
+                  <strong>{t("pages.transaction.Transaction Hash")}</strong>
                 </td>
                 <td>{transaction.hash}</td>
               </tr>
               <tr>
                 <td>
-                  <strong>Block Number:</strong>
+                  <strong>{t("pages.transaction.Block Number")}</strong>
                 </td>
                 <td>{Number(transaction.blockNumber)}</td>
               </tr>
               <tr>
                 <td>
-                  <strong>From:</strong>
+                  <strong>{t("pages.transaction.From")}</strong>
                 </td>
                 <td>
                   <Address address={transaction.from} format="long" />
@@ -70,14 +73,14 @@ const TransactionPage: NextPage = () => {
               </tr>
               <tr>
                 <td>
-                  <strong>To:</strong>
+                  <strong>{t("pages.transaction.To")}</strong>
                 </td>
                 <td>
                   {!receipt?.contractAddress ? (
                     transaction.to && <Address address={transaction.to} format="long" />
                   ) : (
                     <span>
-                      Contract Creation:
+                      {t("pages.transaction.Contract Creation")}
                       <Address address={receipt.contractAddress} format="long" />
                     </span>
                   )}
@@ -85,7 +88,7 @@ const TransactionPage: NextPage = () => {
               </tr>
               <tr>
                 <td>
-                  <strong>Value:</strong>
+                  <strong>{t("pages.transaction.Value:")}</strong>
                 </td>
                 <td>
                   {formatEther(transaction.value)} {targetNetwork.nativeCurrency.symbol}
@@ -93,12 +96,12 @@ const TransactionPage: NextPage = () => {
               </tr>
               <tr>
                 <td>
-                  <strong>Function called:</strong>
+                  <strong>{t("pages.transaction.Function called")}</strong>
                 </td>
                 <td>
                   <div className="w-full md:max-w-[600px] lg:max-w-[800px] overflow-x-auto whitespace-nowrap">
                     {functionCalled === "0x" ? (
-                      "This transaction did not call any function."
+                      t("pages.transaction.This transaction did not call any function.")
                     ) : (
                       <>
                         <span className="mr-2">{getFunctionDetails(transaction)}</span>
@@ -110,13 +113,13 @@ const TransactionPage: NextPage = () => {
               </tr>
               <tr>
                 <td>
-                  <strong>Gas Price:</strong>
+                  <strong>{t("pages.transaction.Gas Price")}</strong>
                 </td>
                 <td>{formatUnits(transaction.gasPrice || 0n, 9)} Gwei</td>
               </tr>
               <tr>
                 <td>
-                  <strong>Data:</strong>
+                  <strong>{t("pages.transaction.Data")}</strong>
                 </td>
                 <td className="form-control">
                   <textarea readOnly value={transaction.input} className="p-0 textarea-primary bg-inherit h-[150px]" />
@@ -124,13 +127,16 @@ const TransactionPage: NextPage = () => {
               </tr>
               <tr>
                 <td>
-                  <strong>Logs:</strong>
+                  <strong> {t("pages.transaction.Logs")}</strong>
                 </td>
                 <td>
                   <ul>
                     {receipt?.logs?.map((log, i) => (
                       <li key={i}>
-                        <strong>Log {i} topics:</strong> {JSON.stringify(log.topics, replacer, 2)}
+                        <strong>
+                          {t("pages.transaction.Log ")} {i} {t("topics")}
+                        </strong>{" "}
+                        {JSON.stringify(log.topics, replacer, 2)}
                       </li>
                     ))}
                   </ul>
@@ -140,7 +146,7 @@ const TransactionPage: NextPage = () => {
           </table>
         </div>
       ) : (
-        <p className="text-2xl text-base-content">Loading...</p>
+        <p className="text-2xl text-base-content">{t("Loading...")}</p>
       )}
     </div>
   );

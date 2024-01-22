@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import fs from "fs";
+import { t } from "i18next";
 import { GetServerSideProps } from "next";
 import path from "path";
 import { Address as AddressType, createPublicClient, http } from "viem";
@@ -70,7 +71,7 @@ const AddressPage = ({ address, contractData }: PageProps) => {
               <div className="flex flex-col gap-1">
                 <Address address={address} format="long" />
                 <div className="flex gap-1 items-center">
-                  <span className="font-bold text-sm">Balance:</span>
+                  <span className="font-bold text-sm">{t("scaffold.Balance")}:</span>
                   <Balance address={address} className="text" />
                 </div>
               </div>
@@ -84,25 +85,25 @@ const AddressPage = ({ address, contractData }: PageProps) => {
             className={`tab tab-lifted ${activeTab === "transactions" ? "tab-active" : ""}`}
             onClick={() => setActiveTab("transactions")}
           >
-            Transactions
+            {t("scaffold.Transactions")}
           </button>
           <button
             className={`tab tab-lifted ${activeTab === "code" ? "tab-active" : ""}`}
             onClick={() => setActiveTab("code")}
           >
-            Code
+            {t("scaffold.Code")}
           </button>
           <button
             className={`tab tab-lifted ${activeTab === "storage" ? "tab-active" : ""}`}
             onClick={() => setActiveTab("storage")}
           >
-            Storage
+            {t("scaffold.Storage")}
           </button>
           <button
             className={`tab tab-lifted ${activeTab === "logs" ? "tab-active" : ""}`}
             onClick={() => setActiveTab("logs")}
           >
-            Logs
+            {t("scaffold.Logs")}
           </button>
         </div>
       )}

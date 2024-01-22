@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { t } from "i18next";
 import type { NextPage } from "next";
 import { hardhat } from "viem/chains";
 import { PaginationButton } from "~~/components/blockexplorer/PaginationButton";
@@ -16,7 +17,7 @@ const Blockexplorer: NextPage = () => {
     if (targetNetwork.id === hardhat.id && error) {
       notification.error(
         <>
-          <p className="font-bold mt-0 mb-1">Cannot connect to local provider</p>
+          <p className="font-bold mt-0 mb-1"> {t("pages.explorer.Cannot connect to local provider")}</p>
           <p className="m-0">
             - Did you forget to run <code className="italic bg-base-300 text-base font-bold">yarn chain</code> ?
           </p>
